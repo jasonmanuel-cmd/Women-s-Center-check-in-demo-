@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Fictional Women's Center check-in and staff queue demonstration. No real submissions or case-system connection.">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'; form-action 'none'; object-src 'none'; base-uri 'none'">
+  <title>Women's Center | A little support, a simpler start</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+<div class="demo-banner"><span class="demo-dot"></span><strong>Fictional demo only.</strong> No real information, real submissions, or case-system connection.</div>
+<header class="site-header">
+  <a class="brand" href="#main" aria-label="Women's Center demo home"><span class="brand-mark" aria-hidden="true">w<span>c</span></span><span>Women's Center<small>CHECK-IN CONCEPT</small></span></a>
+  <nav class="view-switch" aria-label="Demo views"><button type="button" class="active" id="guest-view" aria-pressed="true">Guest check-in</button><button type="button" id="staff-view" aria-pressed="false">Staff queue <span id="queue-count">2</span></button></nav>
+  <button class="text-button reset-button" type="button" id="reset-demo">Reset demo <span aria-hidden="true">↺</span></button>
+</header>
+<main id="main" tabindex="-1">
+<section id="guest-panel" class="guest-layout" aria-labelledby="guest-heading">
+  <aside class="welcome-panel">
+    <div class="eyebrow"><span class="line"></span> A WELCOMING FIRST STEP</div>
+    <h1 id="guest-heading">A little support.<br> A simpler start.</h1>
+    <p class="lead">Share what would help today. Keep it brief, choose what feels comfortable, and leave the rest for a conversation.</p>
+    <div class="care-illustration" aria-hidden="true"><div class="arch arch-one"></div><div class="arch arch-two"></div><div class="stem stem-one"></div><div class="stem stem-two"></div><div class="leaf leaf-one"></div><div class="leaf leaf-two"></div><div class="leaf leaf-three"></div><div class="sun"></div><span class="illustration-caption">Room to feel welcome.</span></div>
+    <div class="promise"><span class="promise-icon" aria-hidden="true">✓</span><p><strong>Support comes first.</strong><br>No account, full name, or personal history in this demo. Follow-up and prayer are separate, optional choices.</p></div>
+  </aside>
+  <div class="checkin-side">
+    <div class="demo-tools"><span>TRY A FICTIONAL EXAMPLE</span><div><button type="button" id="example-supplies">Supplies only</button><button type="button" id="example-walkin">Walk-in + clothing</button><button type="button" id="example-followup">Safe follow-up</button></div></div>
+    <section class="form-card" aria-labelledby="form-title">
+      <div class="card-topline"><span class="pill">SHORT CHECK-IN</span><span class="time-label">About 1 minute</span></div>
+      <h2 id="form-title" tabindex="-1">What would help today?</h2>
+      <p class="card-intro">Use the fictional choices below. Please don’t enter anyone’s real information.</p>
+      <ol class="steps" aria-label="Check-in progress"><li class="current" id="step-marker-1" aria-current="step"><span>1</span>Today’s needs</li><li id="step-marker-2"><span>2</span>Preferences</li><li id="step-marker-3"><span>3</span>Review</li></ol>
+      <form id="checkin-form" autocomplete="off">
+        <div class="form-step" id="step-1">
+          <label class="field-label" for="alias">What should we call you? <span>Optional</span></label>
+          <select id="alias"><option value="Guest">I’d rather stay unnamed</option><option value="River (fictional)">River (fictional)</option><option value="Sky (fictional)">Sky (fictional)</option><option value="Alex (fictional)">Alex (fictional)</option></select>
+          <p class="field-help">A demo alias is enough. No legal name needed.</p>
+          <fieldset class="needs-field"><legend>What could you use? <span>Choose any, or skip</span></legend><div class="need-grid">
+            <label class="choice"><input type="checkbox" name="needs" value="Hygiene essentials"><span><span class="choice-symbol" aria-hidden="true">✧</span>Hygiene essentials</span></label>
+            <label class="choice"><input type="checkbox" name="needs" value="Clothing" id="clothing"><span><span class="choice-symbol" aria-hidden="true">♧</span>Clothing</span></label>
+            <label class="choice"><input type="checkbox" name="needs" value="Food & water"><span><span class="choice-symbol" aria-hidden="true">◒</span>Food & water</span></label>
+            <label class="choice"><input type="checkbox" name="needs" value="Period supplies"><span><span class="choice-symbol" aria-hidden="true">◇</span>Period supplies</span></label>
+            <label class="choice"><input type="checkbox" name="needs" value="Blanket"><span><span class="choice-symbol" aria-hidden="true">▤</span>Blanket</span></label>
+            <label class="choice"><input type="checkbox" name="needs" value="Talk with staff"><span><span class="choice-symbol" aria-hidden="true">☷</span>Talk with staff</span></label>
+          </div></fieldset>
+          <div id="clothing-details" class="conditional" hidden><label class="field-label" for="size">Clothing size <span>Optional</span></label><select id="size"><option value="Discuss in person">I’d rather discuss it in person</option><option>XS</option><option>S</option><option>M</option><option>L</option><option>XL</option><option>2XL</option><option>3XL+</option><option>Not sure</option></select><p class="field-help">This is a general size for the example, not a promise of stock.</p></div>
+          <fieldset class="visit-field"><legend>How is this demo check-in happening?</legend><label class="radio-row"><input type="radio" name="visit" value="Guest self-check-in" checked><span>On my own</span></label><label class="radio-row"><input type="radio" name="visit" value="Staff-assisted walk-in"><span>With a staff member at walk-in</span></label></fieldset>
+        </div>
+        <div class="form-step" id="step-2" hidden>
+          <fieldset><legend>Would a follow-up be welcome? <span>Optional</span></legend><p class="field-help">No follow-up is the default. Choosing no won’t change support.</p><label class="radio-row"><input type="radio" name="followup" value="No follow-up" checked><span>No, please don’t contact me</span></label><label class="radio-row"><input type="radio" name="followup" value="In person"><span>Ask me in person at the demo visit</span></label><label class="radio-row"><input type="radio" name="followup" value="Fictional text"><span>Show a safe-text example</span></label></fieldset>
+          <div id="followup-details" class="conditional" hidden><div class="fictional-contact"><span>FICTIONAL CONTACT ONLY</span><strong>(202) 555-0142</strong><small>Fixed sample number. No text will be sent.</small></div><label class="field-label" for="safe-time">Sample safe time</label><select id="safe-time"><option value="10 am–2 pm">10 am–2 pm</option><option value="2 pm–5 pm">2 pm–5 pm</option><option value="Confirm in person first">Do not text until confirmed in person</option></select><p class="field-help">Demo instruction: text only; no call or voicemail.</p><label class="consent-row"><input id="followup-consent" type="checkbox"><span>In this fictional example, I agree to this sample contact preference, including any requirement to confirm in person before texting.</span></label><p class="field-error" id="consent-error" role="alert" hidden>Choose the fictional consent checkbox, or select no follow-up / in person.</p></div>
+          <fieldset class="prayer-field"><legend>Would you like prayer? <span>Separate & optional</span></legend><p class="field-help">This is independent of supplies and follow-up. Either answer is welcome.</p><label class="radio-row"><input type="radio" name="prayer" value="Not requested" checked><span>No prayer requested</span></label><label class="radio-row"><input type="radio" name="prayer" value="Requested in person"><span>Yes, I’d welcome prayer in person</span></label></fieldset>
+        </div>
+        <div class="form-step" id="step-3" hidden><div class="review-header"><span class="review-icon" aria-hidden="true">✓</span><div><h3>Your demo check-in</h3><p>Review your choices before the simulated handoff.</p></div></div><dl class="review-list" id="review-list"></dl><div class="info-note"><strong>Only a simulation.</strong> This adds a fictional card to the staff queue in this browser tab. It does not create a real case, notify Jamie, or send anything.</div></div>
+        <div class="form-actions"><button type="button" class="secondary-button" id="back-step" hidden>Back</button><span class="step-footnote" id="step-footnote">Nothing here is saved.</span><button type="submit" class="primary-button" id="next-step">Continue <span aria-hidden="true">→</span></button></div>
+      </form>
+      <div id="success-panel" hidden><div class="success-icon" aria-hidden="true">✓</div><h3>Demo check-in received.</h3><p>Your fictional request is now in the simulated queue, ready for Jamie to review.</p><div class="success-ticket"><span>DEMO REFERENCE</span><strong id="success-id"></strong><small>No real case was created.</small></div><button type="button" class="primary-button full" id="view-handoff">See the staff handoff <span aria-hidden="true">→</span></button><button type="button" class="text-button full" id="new-checkin">Try another check-in</button></div>
+      <div class="privacy-strip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>Fictional choices only. Cleared when you reload or reset.</div>
+    </section>
+  </div>
+</section>
+<section id="staff-panel" class="staff-layout" aria-labelledby="staff-heading" hidden>
+  <div class="staff-heading-row"><div><div class="eyebrow"><span class="line"></span> SIMULATED STAFF WORKSPACE</div><h1 id="staff-heading" tabindex="-1">A clear next step.</h1><p>Jamie’s demo queue turns a brief check-in into a simple, human handoff.</p></div><button type="button" class="secondary-button" id="staff-new">New demo check-in <span aria-hidden="true">+</span></button></div>
+  <div class="queue-stats" aria-label="Queue summary"><div><span class="stat-number" id="stat-new">0</span><span>New check-ins</span></div><div><span class="stat-number" id="stat-progress">0</span><span>With staff / ready</span></div><div><span class="stat-number" id="stat-complete">0</span><span>Completed</span></div><div class="integration-status"><span class="demo-dot"></span><span><strong>Demo mode</strong><small>No case system connected</small></span></div></div>
+  <div class="queue-workspace"><section class="queue-list-panel" aria-labelledby="queue-title"><div class="queue-toolbar"><h2 id="queue-title">Check-ins <span id="queue-total">2</span></h2><label for="queue-filter" class="sr-only">Filter demo queue</label><select id="queue-filter"><option value="all">All check-ins</option><option value="active">Open only</option><option value="complete">Completed</option></select></div><div id="queue-list"></div></section><section id="case-detail" class="case-detail" aria-label="Selected fictional check-in"></section></div>
+  <aside class="integration-note"><div><span class="eyebrow">WHAT THIS DEMONSTRATES</span><h3>Check in → Review → Prepare support → Complete</h3><p>This browser-only queue illustrates the handoff. A real connection would require the center’s chosen system, staff access controls, consent process, and secure data handling before any client use.</p></div><span class="outline-pill">NOT CONNECTED</span></aside>
+</section>
+<section class="about-demo"><button type="button" id="about-toggle" aria-expanded="false" aria-controls="about-content">About this fictional demo <span aria-hidden="true">+</span></button><div id="about-content" hidden><p><strong>For a conversation, not for client use.</strong> Every record is fictional. The app uses predefined choices, no free-text or upload fields, no database, no analytics, and no app network requests. Selections stay only in this page’s memory and are never added to the URL. Your hosting provider may maintain ordinary access logs.</p><p><strong>Not production-ready.</strong> The guest/staff switch is a demonstration, not staff authentication. No inventory, case-management system, notification, emergency response, or real follow-up is connected. Access to the hosted demo is managed separately from this guest/staff switch.</p><p>Before real use: agree on the center’s workflow, confidentiality and retention policy, accessible language options, staff permissions, consent wording, and approved integrations. Supplies and services shown are illustrative and not confirmed offerings.</p></div></section>
+</main>
+<footer><span>Women’s Center <span class="footer-divider">/</span> A fictional workflow concept</span><span>Small steps. Thoughtful support.</span></footer>
+<div id="announcer" class="sr-only" role="status" aria-live="polite"></div>
+<dialog id="reset-dialog" aria-labelledby="reset-title"><h2 id="reset-title">Reset the fictional demo?</h2><p>This clears your choices and demo queue changes, then restores the two example check-ins.</p><div class="dialog-actions"><button class="secondary-button" id="reset-cancel" type="button">Keep exploring</button><button class="primary-button" id="reset-confirm" type="button">Reset demo</button></div></dialog>
+<noscript><p class="noscript">This interactive demo needs JavaScript. No real information is collected.</p></noscript>
+</body>
+</html>
